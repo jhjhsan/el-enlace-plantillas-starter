@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🔒 Forzar modo claro */
-html, body {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
+/* modo claro fijo */
+html, body, #root { height: 100%; }
+body { margin: 0; background: #ffffff; color: #000000; }
+html { scroll-behavior: smooth; }
