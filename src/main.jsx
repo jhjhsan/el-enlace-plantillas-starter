@@ -4,10 +4,19 @@ import "./index.css";
 import App from "./App.jsx";
 import { config } from "./config";
 
-// Aplicar tema + variables ANTES del primer render (evita inconsistencias / flashes)
-const isDark = config?.layout?.themeDefault === "dark";
-document.documentElement.classList.toggle("dark", isDark);
+/**
+ * ✅ Limpieza total:
+ * evita que body/#root conserven "dark" y activen el modo oscuro por el CSS
+ */
+document.documentElement.classList.remove("dark");
+document.body.classList.remove("dark");
+document.getElementById("root")?.classList.remove("dark");
 
+// Aplicar tema según config (control único)
+const isDark = config?.layout?.themeDefault === "dark";
+if (isDark) document.documentElement.classList.add("dark");
+
+// Variables de color
 const primary = config?.brand?.primaryColor;
 const accent = config?.brand?.accentColor;
 
