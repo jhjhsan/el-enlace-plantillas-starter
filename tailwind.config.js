@@ -1,9 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class", // 🚫 desactiva "media" y fuerza solo por clase
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
   plugins: [],
-};
+}
