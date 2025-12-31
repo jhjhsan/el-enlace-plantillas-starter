@@ -13,9 +13,6 @@ document.documentElement.classList.remove("dark");
 document.body.classList.remove("dark");
 document.getElementById("root")?.classList.remove("dark");
 
-// 🔆 Modo claro fijo para este proyecto
-document.documentElement.classList.add("light");
-
 // 🎨 Variables de color personalizadas
 const primary = config?.brand?.primaryColor;
 const accent = config?.brand?.accentColor;
