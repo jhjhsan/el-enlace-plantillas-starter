@@ -53,8 +53,9 @@
     ],
   },
 
-  layout: {
-    themeDefault: "dark",
-    enableThemeToggle: false,
-  },
+ layout: {
+  themeDefault: "light",
+  enableThemeToggle: false,
+},
 };
+
