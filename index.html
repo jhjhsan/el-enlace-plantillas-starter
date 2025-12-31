@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
-body { margin: 0; }
-html { scroll-behavior: smooth; }
+/* ✅ FORZAR MODO CLARO (sin depender del sistema ni cookies) */
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Evita “flash” oscuro por clases viejas */
+html.dark, body.dark, #root.dark {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
