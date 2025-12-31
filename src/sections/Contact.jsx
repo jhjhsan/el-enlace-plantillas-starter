@@ -1,5 +1,7 @@
 import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { config } from "../config";
+import Container from "../components/Container";
+import SectionTitle from "../components/SectionTitle";
 
 function onlyDigits(value = "") {
   return String(value).replace(/[^\d]/g, "");
@@ -23,52 +25,86 @@ export default function Contact() {
   const mailtoUrl = `mailto:${email}`;
 
   return (
-    <section id="contacto" className="py-16 bg-slate-950 text-white">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-4">
-        {/* WhatsApp */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
-          <p className="opacity-70">{phone ? `+${phone}` : "+56900000000"}</p>
-          <a
-            href={whatsappUrlWithText}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 mt-4 bg-white text-slate-900 px-5 py-2 rounded-full font-medium hover:opacity-90"
-          >
-            <FaWhatsapp /> Contactar
-          </a>
+    <section id="contacto" className="py-14 sm:py-20">
+      <Container>
+        <SectionTitle
+          title="Contacto"
+          subtitle="Elige tu canal preferido para comenzar."
+        />
+
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {/* WhatsApp */}
+          <div className="rounded-2xl border border-black/10 bg-white/70 p-6 text-center shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl border border-black/10 bg-white/80 text-black/70 dark:border-white/10 dark:bg-white/10 dark:text-white/70">
+              <FaWhatsapp />
+            </div>
+
+            <h3 className="mt-5 text-base font-semibold text-black dark:text-white">
+              WhatsApp
+            </h3>
+            <p className="mt-1 text-sm text-black/60 dark:text-white/60">
+              {phone ? `+${phone}` : "+56900000000"}
+            </p>
+
+            <a
+              href={whatsappUrlWithText}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-black px-4 py-3 text-sm font-semibold text-white hover:opacity-90 dark:bg-white dark:text-black"
+            >
+              <FaWhatsapp /> Contactar
+            </a>
+          </div>
+
+          {/* Email */}
+          <div className="rounded-2xl border border-black/10 bg-white/70 p-6 text-center shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl border border-black/10 bg-white/80 text-black/70 dark:border-white/10 dark:bg-white/10 dark:text-white/70">
+              <FaEnvelope />
+            </div>
+
+            <h3 className="mt-5 text-base font-semibold text-black dark:text-white">
+              Email
+            </h3>
+            <p className="mt-1 text-sm text-black/60 dark:text-white/60">
+              {email}
+            </p>
+
+            <a
+              href={mailtoUrl}
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-black hover:bg-black/5 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
+            >
+              <FaEnvelope /> Enviar email
+            </a>
+          </div>
+
+          {/* Instagram */}
+          <div className="rounded-2xl border border-black/10 bg-white/70 p-6 text-center shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl border border-black/10 bg-white/80 text-black/70 dark:border-white/10 dark:bg-white/10 dark:text-white/70">
+              <FaInstagram />
+            </div>
+
+            <h3 className="mt-5 text-base font-semibold text-black dark:text-white">
+              Instagram
+            </h3>
+            <p className="mt-1 text-sm text-black/60 dark:text-white/60">
+              @{igUser}
+            </p>
+
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-black hover:bg-black/5 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
+            >
+              <FaInstagram /> Ver perfil
+            </a>
+          </div>
         </div>
 
-        {/* Email */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-semibold mb-2">Email</h3>
-          <p className="opacity-70">{email}</p>
-          <a
-            href={mailtoUrl}
-            className="inline-flex items-center gap-2 mt-4 border border-white/20 px-5 py-2 rounded-full hover:border-white/40"
-          >
-            <FaEnvelope /> Enviar email
-          </a>
-        </div>
-
-        {/* Instagram */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-semibold mb-2">Instagram</h3>
-          <p className="opacity-70">@{igUser}</p>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 mt-4 border border-white/20 px-5 py-2 rounded-full hover:border-white/40"
-          >
-            <FaInstagram /> Ver perfil
-          </a>
-        </div>
-      </div>
-
-      <p className="text-center text-sm text-white/50 mt-6">
-        Todo editable en <code>src/config.js</code>
-      </p>
+        <p className="mt-8 text-center text-xs text-black/50 dark:text-white/50">
+          Todo editable en <code>src/config.js</code>
+        </p>
+      </Container>
     </section>
   );
 }
