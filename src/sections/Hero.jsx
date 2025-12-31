@@ -82,9 +82,9 @@ export default function Hero() {
               {config.content.headline}
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-black/65 dark:text-white/65 sm:text-lg">
-              {config.content.subheadline}
-            </p>
+          <p className="mt-5 text-base leading-relaxed text-black/70 dark:text-white/70 sm:text-lg">
+  {config.content.subheadline}
+</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={waLink} variant="primary">
@@ -105,3 +105,4 @@ export default function Hero() {
     </section>
   );
 }
+
