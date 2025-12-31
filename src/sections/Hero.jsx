@@ -19,11 +19,19 @@ export default function Hero() {
       <Container>
         <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 sm:p-10">
           {/* glow sutil dentro del card */}
-          <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full blur-3xl opacity-40 dark:opacity-25"
-               style={{ background: "radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 60%)" }}
+          <div
+            className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full blur-3xl opacity-40 dark:opacity-25"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 60%)",
+            }}
           />
-          <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full blur-3xl opacity-30 dark:opacity-18"
-               style={{ background: "radial-gradient(circle, rgba(255,255,255,0.14) 0%, transparent 60%)" }}
+          <div
+            className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full blur-3xl opacity-30 dark:opacity-18"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(255,255,255,0.14) 0%, transparent 60%)",
+            }}
           />
 
           {/* Top bar */}
@@ -46,13 +54,13 @@ export default function Hero() {
             <div className="hidden items-center gap-6 sm:flex">
               <button
                 className="text-xs font-medium text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white transition-colors"
-                onClick={() => scrollTo("services")}
+                onClick={() => scrollTo("servicios")}
               >
                 Servicios
               </button>
               <button
                 className="text-xs font-medium text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white transition-colors"
-                onClick={() => scrollTo("pricing")}
+                onClick={() => scrollTo("precios")}
               >
                 Precios
               </button>
@@ -64,7 +72,7 @@ export default function Hero() {
               </button>
               <button
                 className="text-xs font-medium text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white transition-colors"
-                onClick={() => scrollTo("contact")}
+                onClick={() => scrollTo("contacto")}
               >
                 Contacto
               </button>
@@ -82,16 +90,16 @@ export default function Hero() {
               {config.content.headline}
             </h1>
 
-          <p className="mt-5 text-base leading-relaxed text-black/70 dark:text-white/70 sm:text-lg">
-  {config.content.subheadline}
-</p>
+            <p className="mt-5 text-base leading-relaxed text-black/70 dark:text-white/70 sm:text-lg">
+              {config.content.subheadline}
+            </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={waLink} variant="primary">
                 Contactar por WhatsApp
               </Button>
 
-              <Button onClick={() => scrollTo("pricing")} variant="secondary">
+              <Button onClick={() => scrollTo("precios")} variant="secondary">
                 Ver precios
               </Button>
             </div>
@@ -105,4 +113,3 @@ export default function Hero() {
     </section>
   );
 }
-
