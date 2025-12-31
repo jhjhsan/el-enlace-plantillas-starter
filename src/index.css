@@ -1,4 +1,7 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
+
+/* ✅ Tailwind v4: fuerza dark: por clase .dark (NO por sistema) */
+@custom-variant dark (&:where(.dark, .dark *));
 
 html, body, #root { height: 100%; }
 body { margin: 0; }
