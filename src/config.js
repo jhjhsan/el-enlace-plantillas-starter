@@ -1,4 +1,4 @@
-﻿export const config = {
+export const config = {
   brand: {
     name: "El Enlace Plantillas",
     logoText: "EL",
@@ -58,5 +58,3 @@
   enableThemeToggle: false,
 },
 };
-
-
