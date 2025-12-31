@@ -1,5 +1,3 @@
-import { config } from "./config";
-
 import Hero from "./sections/Hero";
 import Services from "./sections/Services";
 import Pricing from "./sections/Pricing";
