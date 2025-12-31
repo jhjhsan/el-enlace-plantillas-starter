@@ -53,8 +53,8 @@ export const config = {
     ],
   },
 
- layout: {
-  themeDefault: "light",
-  enableThemeToggle: false,
-},
+  layout: {
+    themeDefault: "light",
+    enableThemeToggle: false,
+  },
 };
