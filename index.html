@@ -1,20 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ✅ FORZAR MODO CLARO (sin depender del sistema ni cookies) */
-:root {
-  color-scheme: light;
-}
-
-html, body, #root {
-  height: 100%;
-  background: #ffffff !important;
-  color: #000000 !important;
-}
-
-/* Evita “flash” oscuro por clases viejas */
-html.dark, body.dark, #root.dark {
-  background: #ffffff !important;
-  color: #000000 !important;
-}
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Enlace Plantillas</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
