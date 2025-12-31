@@ -1,40 +1,36 @@
-﻿import Container from "../components/Container";
-import { config } from "../config";
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const config = {
+    contact: {
+      email: "hola@tudominio.com",
+      instagramUrl: "https://instagram.com/tuinstagram",
+    },
+  };
 
   return (
-    <footer className="py-10">
-      <Container>
-        <div className="flex flex-col gap-3 rounded-3xl border border-black/10 bg-white/70 p-6 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-2xl bg-[color:var(--primary)] text-black font-extrabold">
-              {config.brand.logoText}
-            </div>
-            <div>
-              <div className="font-semibold text-black dark:text-white">
-                {config.brand.name}
-              </div>
-              <div className="text-xs">© {year}. Todos los derechos reservados.</div>
-            </div>
+    <footer className="bg-[#0a0a0a] text-white py-6 mt-20">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-6">
+        <div className="flex items-center gap-3">
+          <div className="bg-[#E3B455] text-black rounded-full w-10 h-10 flex items-center justify-center font-bold">
+            TM
           </div>
-
-          <div className="flex items-center gap-4">
-            <a
-              className="underline"
-              href={`https://instagram.com/${config.contact.instagram}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              📷 Instagram
-            </a>
-            <a className="underline" href={`mailto:${config.contact.email}`}>
-              ✉️ Email
-            </a>
+          <div>
+            <p className="font-semibold">Tu Marca</p>
+            <p className="text-xs opacity-70">© 2025. Todos los derechos reservados.</p>
           </div>
         </div>
-      </Container>
+
+        <div className="flex items-center gap-5">
+          <a href={config.contact.instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 opacity-80 hover:opacity-100">
+            <FaInstagram /> <span>Instagram</span>
+          </a>
+
+          <a href={`mailto:${config.contact.email}`} className="inline-flex items-center gap-2 opacity-80 hover:opacity-100">
+            <FaEnvelope /> <span>Email</span>
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }
