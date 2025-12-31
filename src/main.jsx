@@ -6,17 +6,17 @@ import { config } from "./config";
 
 /**
  * ✅ Limpieza total:
- * evita que body/#root conserven "dark" y activen el modo oscuro por el CSS
+ * Elimina cualquier rastro de modo oscuro previo
+ * (Evita que Vercel o el navegador guarden "dark" en localStorage o classList)
  */
 document.documentElement.classList.remove("dark");
 document.body.classList.remove("dark");
 document.getElementById("root")?.classList.remove("dark");
 
-// Aplicar tema según config (control único)
-const isDark = config?.layout?.themeDefault === "dark";
-if (isDark) document.documentElement.classList.add("dark");
+// 🔆 Modo claro fijo para este proyecto
+document.documentElement.classList.add("light");
 
-// Variables de color
+// 🎨 Variables de color personalizadas
 const primary = config?.brand?.primaryColor;
 const accent = config?.brand?.accentColor;
 
@@ -27,6 +27,7 @@ if (typeof accent === "string" && accent.trim()) {
   document.documentElement.style.setProperty("--accent", accent);
 }
 
+// 🚀 Render principal
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
