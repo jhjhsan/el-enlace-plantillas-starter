@@ -26,7 +26,7 @@ export default function Pricing() {
                 ].join(" ")}
               >
                 {featured ? (
-                  <div className="absolute -top-3 left-6">
+                  <div className="absolute top-4 left-6">
                     <span className="rounded-full bg-[color:var(--primary)] px-3 py-1 text-[11px] font-semibold text-black">
                       Recomendado
                     </span>
