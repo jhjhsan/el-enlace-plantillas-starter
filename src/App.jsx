@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { config } from "./config";
 
 import Hero from "./sections/Hero";
@@ -11,24 +10,6 @@ import Footer from "./sections/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export default function App() {
-  useEffect(() => {
-    // Tema default (forzar estado exacto)
-    const isDark = config?.layout?.themeDefault === "dark";
-    document.documentElement.classList.toggle("dark", isDark);
-
-    // Colores desde config -> CSS variables (a prueba de ediciones)
-    const primary = config?.brand?.primaryColor;
-    const accent = config?.brand?.accentColor;
-
-    if (typeof primary === "string" && primary.trim()) {
-      document.documentElement.style.setProperty("--primary", primary);
-    }
-
-    if (typeof accent === "string" && accent.trim()) {
-      document.documentElement.style.setProperty("--accent", accent);
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-white text-zinc-950 dark:bg-[#0b0b0c] dark:text-white">
       {/* Fondo global sutil (para evitar “cortes” de color entre secciones) */}
