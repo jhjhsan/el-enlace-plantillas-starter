@@ -5,7 +5,7 @@ import { config } from "../config";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-14 sm:py-20">
+    <section id="precios" className="py-14 sm:py-20">
       <Container>
         <SectionTitle
           title="Precios"
@@ -55,7 +55,9 @@ export default function Pricing() {
                     <li key={i} className="flex gap-3">
                       <span
                         className="mt-[7px] h-1.5 w-1.5 rounded-full"
-                        style={{ backgroundColor: featured ? "var(--primary)" : undefined }}
+                        style={{
+                          backgroundColor: featured ? "var(--primary)" : undefined,
+                        }}
                       />
                       <span className="leading-6">{f}</span>
                     </li>
