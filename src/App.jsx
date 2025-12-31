@@ -16,9 +16,17 @@ export default function App() {
     const isDark = config?.layout?.themeDefault === "dark";
     document.documentElement.classList.toggle("dark", isDark);
 
-    // Colores desde config -> CSS variables
-    document.documentElement.style.setProperty("--primary", config.brand.primaryColor);
-    document.documentElement.style.setProperty("--accent", config.brand.accentColor);
+    // Colores desde config -> CSS variables (a prueba de ediciones)
+    const primary = config?.brand?.primaryColor;
+    const accent = config?.brand?.accentColor;
+
+    if (typeof primary === "string" && primary.trim()) {
+      document.documentElement.style.setProperty("--primary", primary);
+    }
+
+    if (typeof accent === "string" && accent.trim()) {
+      document.documentElement.style.setProperty("--accent", accent);
+    }
   }, []);
 
   return (
