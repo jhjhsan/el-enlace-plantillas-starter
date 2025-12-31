@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "preview": "vite preview",
+    "clean": "node --input-type=module -e \"import fs from 'node:fs'; for (const p of ['dist','template-zip']) fs.rmSync(p,{recursive:true,force:true}); console.log('✅ clean: dist/ y template-zip/ eliminados');\"",
+    "zip:prepare": "node --input-type=module -e \"import fs from 'node:fs'; import path from 'node:path'; const root=process.cwd(); const out=path.join(root,'template-zip'); fs.rmSync(out,{recursive:true,force:true}); fs.mkdirSync(out,{recursive:true}); const keep=['src','public','index.html','package.json','vite.config.js','vite.config.ts','postcss.config.js','postcss.config.cjs','tailwind.config.js','tailwind.config.cjs','README.md','LICENSE','DISCLAIMER.md','CHANGELOG.md','.gitignore','.env.example']; for (const k of keep){ const p=path.join(root,k); if(!fs.existsSync(p)) continue; const dest=path.join(out,k); const stat=fs.statSync(p); if(stat.isDirectory()) fs.cpSync(p,dest,{recursive:true}); else fs.copyFileSync(p,dest); } console.log('✅ template-zip/ listo (sin node_modules)');\""
   },
   "dependencies": {
     "react": "^19.2.0",
