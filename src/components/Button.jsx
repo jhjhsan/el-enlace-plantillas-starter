@@ -1,10 +1,12 @@
-﻿export default function Button({
+export default function Button({
   children,
   href,
   onClick,
   variant = "primary",
   className = "",
   type = "button",
+  target,
+  rel,
 }) {
   const base =
     "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-semibold transition active:scale-[0.99]";
@@ -15,11 +17,17 @@
       "bg-transparent text-black ring-1 ring-black/15 hover:bg-black/5 dark:text-white dark:ring-white/15 dark:hover:bg-white/10",
   };
 
-  const cls = `${base} ${styles[variant]} ${className}`;
+  const variantClass = styles[variant] || styles.primary;
+  const cls = `${base} ${variantClass} ${className}`.trim();
 
   if (href) {
+    const safeRel =
+      target === "_blank"
+        ? (rel ? rel : "noopener noreferrer")
+        : rel;
+
     return (
-      <a className={cls} href={href}>
+      <a className={cls} href={href} target={target} rel={safeRel}>
         {children}
       </a>
     );
