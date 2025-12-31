@@ -16,12 +16,12 @@ export default function Services() {
           {config.content.services.map((s, idx) => (
             <Card key={idx} className="group">
               <div className="flex flex-col">
-                <h3 className="text-lg font-semibold tracking-tight text-black dark:text-white">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-black/65 dark:text-white/65">
-                  {s.description}
-                </p>
+             <h3 className="text-lg font-semibold text-black dark:text-white">
+  {s.title}
+</h3>
+<p className="mt-2 text-[15px] leading-relaxed text-black/70 dark:text-white/70 sm:text-base">
+  {s.description}
+</p>
 
                 {/* detalle visual mínimo para “premium” */}
                 <div className="mt-6 h-px w-full bg-black/5 dark:bg-white/10" />
@@ -36,3 +36,4 @@ export default function Services() {
     </section>
   );
 }
+
