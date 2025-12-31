@@ -1,7 +1,6 @@
-@import "tailwindcss";
-
-/* ✅ Tailwind v4: dark SOLO si html tiene class="dark" */
-@custom-variant dark (&:where(html.dark, html.dark *));
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body, #root { height: 100%; }
 body { margin: 0; }
