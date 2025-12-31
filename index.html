@@ -1,13 +1,18 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>el-enlace-plantillas-starter</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Fix fondo negro === */
+html,
+body,
+#root {
+  height: 100%;
+  background-color: white;
+  color: #000;
+}
+
+/* === Variables de color === */
+:root {
+  --primary: #D8A353;
+  --accent: #00BFFF;
+}
