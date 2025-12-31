@@ -1,4 +1,4 @@
-﻿export default function SectionTitle({ title, subtitle }) {
+export default function SectionTitle({ title, subtitle }) {
   return (
     <div className="mb-8">
       <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white sm:text-3xl">
