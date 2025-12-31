@@ -12,12 +12,9 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export default function App() {
   useEffect(() => {
-    // Tema default
-    if (config.layout.themeDefault === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    // Tema default (forzar estado exacto)
+    const isDark = config?.layout?.themeDefault === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
 
     // Colores desde config -> CSS variables
     document.documentElement.style.setProperty("--primary", config.brand.primaryColor);
@@ -29,11 +26,19 @@ export default function App() {
       {/* Fondo global sutil (para evitar “cortes” de color entre secciones) */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-white dark:bg-[#0b0b0c]" />
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full blur-3xl opacity-60 dark:opacity-35"
-             style={{ background: "radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 60%)" }}
+        <div
+          className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full blur-3xl opacity-60 dark:opacity-35"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 60%)",
+          }}
         />
-        <div className="absolute -top-56 right-[-180px] h-[520px] w-[520px] rounded-full blur-3xl opacity-40 dark:opacity-20"
-             style={{ background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)" }}
+        <div
+          className="absolute -top-56 right-[-180px] h-[520px] w-[520px] rounded-full blur-3xl opacity-40 dark:opacity-20"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)",
+          }}
         />
       </div>
 
