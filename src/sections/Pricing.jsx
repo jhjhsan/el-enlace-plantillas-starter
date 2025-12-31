@@ -20,13 +20,13 @@ export default function Pricing() {
               <Card
                 key={idx}
                 className={[
-                  "relative overflow-hidden transition-all",
+                  "relative overflow-visible transition-all",
                   "hover:-translate-y-0.5 hover:shadow-md",
                   featured ? "ring-2 ring-[color:var(--primary)]" : "",
                 ].join(" ")}
               >
                 {featured ? (
-                  <div className="absolute top-4 left-6">
+                  <div className="absolute -top-2 left-6">
                     <span className="rounded-full bg-[color:var(--primary)] px-3 py-1 text-[11px] font-semibold text-black">
                       Recomendado
                     </span>
